@@ -1,0 +1,35 @@
+
+{% if  message %}
+    <h3> {{ message }} </h3>
+    <h3> Original Word is : {{ word }} </h3>
+
+{% else %}
+    <h1> Hangman Game </h1>
+     <hr>
+    
+    {% if error %}
+    <p> {{ error }} </p>
+    {% endif %}
+
+    {% if  counter %} 
+        <h4> Count user fail : {{ counter }}<h4>
+    {% else%} 
+        <h4> Count user fail : 0<h4>
+    {% endif %}
+
+    <h3> {{ dashed_word }} </h3>
+
+    <form method='POST'>
+        {% csrf_token %}
+        <input type="text" name='letter'/>
+        <input type="hidden" name='original_word' value="{{ original_word }}"/>
+        <input type="hidden" name="dashed_word" value="{{ dashed_word }}"/>
+
+        {% if  counter %}
+            <input type='hidden' name='counter' value={{ counter }} />
+        {% endif %}
+        
+        <input type="submit" value='Check'/>
+    </form>
+{% endif %}
+
