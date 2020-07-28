@@ -5,7 +5,7 @@
  
 ________________________
 to run project 
-1- pip install -r requirnements.txt
-2- python manage.py makemigrations 
-3- python manage.py migrate ( i have uploaded the migrations files but to make sure)
-4- python manage.py runserver
+- pip install -r requirnements.txt
+- python manage.py makemigrations 
+- python manage.py migrate ( i have uploaded the migrations files but to make sure)
+- python manage.py runserver
